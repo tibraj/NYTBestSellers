@@ -5,7 +5,17 @@ function bestSellers() {
         method: 'GET',
     })
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(data => {
+        const books = data.results.map(elm => {
+            return elm
+        })
+        const book_details = books.map(elm => {
+            return elm.book_details
+        })
+        const titles = book_details.map(elm => {
+            console.log(elm[0].title, elm[0].author, elm[0].description, elm[0].primary_isbn13, elm[0].publisher);
+        })
+    });
 };
 
     
