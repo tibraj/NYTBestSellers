@@ -32,11 +32,14 @@ function bestSellers() {
         //     console.log(elm.rank);
         //     return rank;
         // })
-        const previous_rank = books.map(elm => {
-            console.log(elm.rank_last_week);
-            return previous_rank;
+        // const previous_rank = books.map(elm => {
+        //     console.log(elm.rank_last_week);
+        //     return previous_rank;
+        // })
+        const time_on_list = books.map(elm => {
+            console.log(elm.weeks_on_list);
+            return time_on_list;
         })
-
     });
 };
 
