@@ -7,13 +7,20 @@ function bestSellers() {
     .then(response => response.json())
     .then(data => {
         const books = data.results.map(elm => {
+            //console.log(elm);
             return elm
         })
         const book_details = books.map(elm => {
+            // console.log(elm.book_details);
             return elm.book_details
         })
-        const titles = book_details.map(elm => {
-            console.log(elm[0].title, elm[0].author, elm[0].description, elm[0].primary_isbn13, elm[0].publisher);
+        // const titles = book_details.map(elm => {
+        //   console.log(elm[0].title, elm[0].author, elm[0].description, elm[0].primary_isbn13, elm[0].publisher);
+        //   return titles;
+        // })
+        const amazon_links = books.map(elm => {
+            console.log(elm.amazon_product_url);
+            return amazon_links;
         })
     });
 };
