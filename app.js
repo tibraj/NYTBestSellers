@@ -28,9 +28,13 @@ function bestSellers() {
         //     })
             //return reviews;
         // })
-        const rank = books.map(elm => {
-            console.log(elm.rank);
-            return rank;
+        // const rank = books.map(elm => {
+        //     console.log(elm.rank);
+        //     return rank;
+        // })
+        const previous_rank = books.map(elm => {
+            console.log(elm.rank_last_week);
+            return previous_rank;
         })
 
     });
