@@ -22,11 +22,15 @@ function bestSellers() {
         //     console.log(elm.amazon_product_url);
         //     return amazon_links;
         // })
-        const reviews = books.map(elm => {
-            elm.reviews.map(book_review => {
-                console.log(book_review.book_review_link);
-            })
+        // const reviews = books.map(elm => {
+        //     elm.reviews.map(book_review => {
+        //         console.log(book_review.book_review_link);
+        //     })
             //return reviews;
+        // })
+        const rank = books.map(elm => {
+            console.log(elm.rank);
+            return rank;
         })
 
     });
