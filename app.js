@@ -53,8 +53,17 @@ function bestSellers() {
                 return book_review.book_review_link
             })
         })
+        let output4 = '';
         const rank = books.map(elm => {
+            output4 += `
+                <ul>
+                    <li><h3>Rank: ${elm.rank}</h3>
+                        <h3>Previous Rank: ${elm.rank_last_week}</h3>
+                        <h3>Weeks Spent on List: ${elm.weeks_on_list}</h3>
+                </ul>
+          `
             console.log(elm.rank, elm.rank_last_week, elm.weeks_on_list);
+            document.getElementById('rank').innerHTML = output4;
             return elm.rank, elm.rank_last_week, elm.weeks_on_list;
         })
     });
