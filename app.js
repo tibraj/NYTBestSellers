@@ -29,8 +29,15 @@ function bestSellers() {
           document.getElementById('titles').innerHTML = output;
           return elm[0].title, elm[0].author, elm[0].description, elm[0].primary_isbn13, elm[0].publisher;
         })
+        let output2 = '';
         const amazon_links = books.map(elm => {
+            output2 += `
+                <ul>
+                    <li><h3>Amazon Link: ${elm.amazon_product_url}</h3></li>
+                </ul>
+            `
             console.log(elm.amazon_product_url);
+            document.getElementById('amazon_links').innerHTML = output2;
             return elm.amazon_product_url;
         })
         const reviews = books.map(elm => {
@@ -45,5 +52,10 @@ function bestSellers() {
         })
     });
 };
+
+// function outputData() {
+//     bestSellers();
+//     let output = '';
+// }
 
     
