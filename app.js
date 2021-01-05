@@ -9,14 +9,24 @@ function bestSellers() {
         const books = data.results.map(elm => {
             console.log(elm);
             return elm
-            
         })
         const book_details = books.map(elm => {
             console.log(elm.book_details);
             return elm.book_details
         })
+        let output = '';
         const titles = book_details.map(elm => {
+          output += `
+                <ul>
+                    <li><h3>Title: ${elm[0].title}</h3>
+                        <h3>Author: ${elm[0].author}</h3>
+                        <h3>Description:${elm[0].description}</h3>
+                        <h3>ISBN:${elm[0].primary_isbn13}</h3>
+                        <h3>Publisher:${elm[0].publisher}</h3></li>
+                </ul>
+          `
           console.log(elm[0].title, elm[0].author, elm[0].description, elm[0].primary_isbn13, elm[0].publisher);
+          document.getElementById('titles').innerHTML = output;
           return elm[0].title, elm[0].author, elm[0].description, elm[0].primary_isbn13, elm[0].publisher;
         })
         const amazon_links = books.map(elm => {
