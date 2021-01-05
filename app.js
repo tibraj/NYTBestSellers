@@ -40,9 +40,16 @@ function bestSellers() {
             document.getElementById('amazon_links').innerHTML = output2;
             return elm.amazon_product_url;
         })
+        let output3 = '';
         const reviews = books.map(elm => {
             elm.reviews.map(book_review => {
+                output3 += `
+                <ul>
+                    <li><h3>NYT Review: ${book_review.book_review_link !== "" ? book_review.book_review_link : "A review has not been written for this title."}</h3></li>
+                </ul>
+                `
                 console.log(book_review.book_review_link);
+                document.getElementById('reviews').innerHTML = output3;
                 return book_review.book_review_link
             })
         })
